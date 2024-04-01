@@ -53,25 +53,29 @@ html, body {
 .nav-search{
     
     display: flex;
-    width: 880px;
+    width: -webkit-fill-available;
     height: 40px;
     justify-content: space-evenly;
     
     border-radius: 4px;
     
 }
-.nav-search:hover{
+/* .nav-search:hover{
     border: 2px solid orange;
-}
+} */
 .select{
     font-size: 15px;
-    width: 40px;
+    /* width: 40px; */
     background-color: #CCCCCC;
     color: #0F1111;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     border: none;
     
+}
+.select:hover{
+    background-color: #868686;
+    cursor: pointer;
 }
 .search-input{
     width: 100%;
@@ -806,14 +810,26 @@ a:hover{
     }
     #mylink{
         display: flex;
+        margin-top: 28px;
+        font-size: 14px;
     }
     .panel-all{
         display: none;
     }
    
 }
+.accountsign{
+    width: 126px;
+}
 #mylink a {
     margin-right: 11px;
+    margin-bottom: 14px;
+}
+.nav-address{
+    margin-left: 12px;
+}
+#mylink > a:nth-child(4){
+    width: 69px;
 }
 .a-box{
     width: 259px;
