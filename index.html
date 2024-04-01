@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body style="background-color: #e2e7e6;">
         <header>
@@ -15,20 +16,22 @@
                     <div class="logo"></div>
                 </div>
                 <div class="nav-search">
-                    <select class="select" name="" id="">
-                        <option value="">All Departments</option>
-                        <option value="">Art & Crafts</option>
-                        <option value="">Automotive</option>
-                        <option value="">Baby</option>
-                        <option value="">Beauty & Personal Care</option>
-                        <option value="">Books</option>
-                        <option value="">Boys' Fashion</option>
-                        <option value="">Computers</option>
-                        <option value="">Deals</option>
-                        <option value="">Digital Music</option>
-                        <option value="">Electronics</option>
-                        <option value="">Girls Fashion</option>
-                        <option value=""></option>
+                    <select id="template" style="display:none;">
+                        <option id="templateOption"></option>
+                    </select>
+                   <select class="select"   id="sel">
+                        <option>All </option>
+                        <option>Art & Crafts</option>
+                        <option>Automotive</option>
+                        <option>Baby</option>
+                        <option>Beauty & Personal Care</option>
+                        <option>Books</option>
+                        <option>Boys' Fashion</option>
+                        <option>Computers</option>
+                        <option>Deals</option>
+                        <option>Digital Music</option>
+                        <option>Electronics</option>
+                        <option>Girls Fashion</option>
                         <input class="search-input" placeholder="Search Amazon">
                         <div class="search-icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -59,7 +62,7 @@
                     
                     </div>
                 </div></a>
-            <a class="top-top" class="link-sign" href="./signup.html">
+            <a class="top-top accountsign" class="link-sign" href="./signup.html">
                 <div class="nav-singin border">
                     <p><span class="sign">Hello, sign in</span></p>
                     <p class="nav-second" >Account & Lists</p>
@@ -515,7 +518,20 @@
                 </div>
                 </footer>
 
+                
+                <script src="./index.js"></script>
 
-    <script src="./index.js"></script>
+                <script>function setSelectWidth() {
+                    var sel = $('#sel');
+                    $('#templateOption').text( sel.val() );
+                    sel.width( $('#template').width() * 1.3 );
+                  }
+                  
+                  setSelectWidth();
+                  
+                  $('#sel').change( function() {
+                    setSelectWidth();
+                  } );
+                </script>
 </body>
 </html>
